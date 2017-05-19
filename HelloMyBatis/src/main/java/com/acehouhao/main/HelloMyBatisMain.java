@@ -15,10 +15,10 @@ public class HelloMyBatisMain {
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
             RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
             Role role = new Role();
-            role.setRoleName("testName");
-            role.setNote("testNote");
+            role.setRoleName("student");
+            role.setNote("stuNote");
             roleMapper.insertRole(role);
-            roleMapper.deleteRole(1L);
+            roleMapper.deleteRole(2L);
             sqlSession.commit();
         } catch (Exception e) {
             System.err.println(e.getMessage());
