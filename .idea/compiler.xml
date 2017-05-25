@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="HelloMyBatis" />
+        <module name="SSM" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HelloMyBatis" target="1.8" />
+      <module name="SSM" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
