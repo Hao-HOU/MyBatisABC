@@ -5,6 +5,9 @@ import com.acehouhao.po.Role;
 import com.acehouhao.util.SqlSessionFactoryUtil;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Hao HOU on 2017/5/19.
  */
@@ -15,10 +18,12 @@ public class HelloMyBatisMain {
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
             RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
             Role role = new Role();
-            role.setRoleName("student");
-            role.setNote("stuNote");
+            role.setRoleName("meet");
+            role.setNote("tea");
             roleMapper.insertRole(role);
-            roleMapper.deleteRole(2L);
+            System.out.println(role.getId());
+//            roleMapper.deleteRole(4L);
+            roleMapper.findRoleByMap("te", "te");
             sqlSession.commit();
         } catch (Exception e) {
             System.err.println(e.getMessage());

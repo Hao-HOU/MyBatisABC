@@ -3,10 +3,19 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.acehouhao.mapper.RoleMapper">
-    <select id="getRole" parameterType="long" resultType="role">
+    <resultMap id="roleMap" type="com.acehouhao.po.Role">
+        <id property="id" column="id"/>
+        <result property="roleName" column="role_name"/>
+        <result property="note" column="note"/>
+    </resultMap>
+    <!--此处使用resultMap才能正确运行，而使用resultType将报错-->
+    <select id="getRole" parameterType="long" resultMap="roleMap">
         SELECT id, role_name AS roleName, note FROM t_role WHERE id = #{id}
     </select>
-    <insert id="insertRole" parameterType="role">
+    <select id="findRoleByMap" resultMap="roleMap">
+        SELECT id, role_name, note FROM t_role WHERE role_name LIKE concat('%', #{roleName}, '%')
+    </select>
+    <insert id="insertRole" parameterType="role" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO t_role(role_name, note) VALUES (#{roleName}, #{note})
     </insert>
     <delete id="deleteRole" parameterType="long">
