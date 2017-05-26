@@ -20,7 +20,7 @@ public class ListServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");//设置编码
-        String command = req.getParameter("command");//
+        String command = req.getParameter("command");
         String description = req.getParameter("description");
         req.setAttribute("command", command);
         req.setAttribute("description",description);
