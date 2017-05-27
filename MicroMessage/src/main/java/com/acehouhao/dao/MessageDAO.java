@@ -2,6 +2,7 @@ package com.acehouhao.dao;
 
 import com.acehouhao.bean.Message;
 import com.acehouhao.db.DBAccess;
+import com.acehouhao.mapper.MessageMapper;
 import org.apache.ibatis.session.SqlSession;
 
 import java.io.IOException;
@@ -23,8 +24,8 @@ public class MessageDAO {
             Message message = new Message();
             message.setCommand(command);
             message.setDescription(description);
-            //通过SqlSession执行SQL语句
-            messageList = sqlSession.selectList("Message.queryMessageList", message);
+            MessageMapper messageMapper = sqlSession.getMapper(MessageMapper.class);
+            messageList = messageMapper.queryMessageList(message);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -44,8 +45,8 @@ public class MessageDAO {
         SqlSession sqlSession = null;
         try {
             sqlSession = dbAccess.getSqlSession();
-            //通过SqlSession执行SQL语句
-            sqlSession.delete("Message.deleteOne", id);
+            MessageMapper messageMapper = sqlSession.getMapper(MessageMapper.class);
+            messageMapper.deleteOne(id);
             sqlSession.commit();
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,8 +66,8 @@ public class MessageDAO {
         SqlSession sqlSession = null;
         try {
             sqlSession = dbAccess.getSqlSession();
-            //通过SqlSession执行SQL语句
-            sqlSession.delete("Message.deleteBatch", ids);
+            MessageMapper messageMapper = sqlSession.getMapper(MessageMapper.class);
+            messageMapper.deleteBatch(ids);
             sqlSession.commit();
         } catch (IOException e) {
             e.printStackTrace();
