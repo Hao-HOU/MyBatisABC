@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/HelloMyBatis/pom.xml" />
         <option value="$PROJECT_DIR$/SSM/pom.xml" />
         <option value="$PROJECT_DIR$/MicroMessage/pom.xml" />
+        <option value="$PROJECT_DIR$/Proxy/pom.xml" />
       </list>
     </option>
   </component>

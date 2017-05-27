@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="HelloMyBatis" />
         <module name="MicroMessage" />
+        <module name="Proxy" />
         <module name="SSM" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HelloMyBatis" target="1.8" />
       <module name="MicroMessage" target="1.8" />
+      <module name="Proxy" target="1.8" />
       <module name="SSM" target="1.8" />
     </bytecodeTargetLevel>
   </component>

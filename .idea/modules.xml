@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HelloMyBatis/HelloMyBatis.iml" filepath="$PROJECT_DIR$/HelloMyBatis/HelloMyBatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/MicroMessage/MicroMessage.iml" filepath="$PROJECT_DIR$/MicroMessage/MicroMessage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Proxy/Proxy.iml" filepath="$PROJECT_DIR$/Proxy/Proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/SSM/SSM.iml" filepath="$PROJECT_DIR$/SSM/SSM.iml" />
     </modules>
   </component>
